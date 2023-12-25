@@ -1,8 +1,11 @@
 package com.mmdxiaoxin.model;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * book
@@ -17,6 +20,7 @@ public class Book implements Serializable {
 
     private String publish;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishdate;
 
     private Integer page;
@@ -24,6 +28,8 @@ public class Book implements Serializable {
     private Double price;
 
     private String content;
+
+    private String formattedPublishDate;
 
     private static final long serialVersionUID = 1L;
 
@@ -39,14 +45,7 @@ public class Book implements Serializable {
             return false;
         }
         Book other = (Book) that;
-        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()))
-            && (this.getAuthor() == null ? other.getAuthor() == null : this.getAuthor().equals(other.getAuthor()))
-            && (this.getPublish() == null ? other.getPublish() == null : this.getPublish().equals(other.getPublish()))
-            && (this.getPublishdate() == null ? other.getPublishdate() == null : this.getPublishdate().equals(other.getPublishdate()))
-            && (this.getPage() == null ? other.getPage() == null : this.getPage().equals(other.getPage()))
-            && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice()))
-            && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()));
+        return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId())) && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName())) && (this.getAuthor() == null ? other.getAuthor() == null : this.getAuthor().equals(other.getAuthor())) && (this.getPublish() == null ? other.getPublish() == null : this.getPublish().equals(other.getPublish())) && (this.getPublishdate() == null ? other.getPublishdate() == null : this.getPublishdate().equals(other.getPublishdate())) && (this.getPage() == null ? other.getPage() == null : this.getPage().equals(other.getPage())) && (this.getPrice() == null ? other.getPrice() == null : this.getPrice().equals(other.getPrice())) && (this.getContent() == null ? other.getContent() == null : this.getContent().equals(other.getContent()));
     }
 
     @Override

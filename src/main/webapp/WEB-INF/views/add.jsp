@@ -52,7 +52,7 @@
     </style>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/book-ctrl?action=save" method="post">
+<form action="${pageContext.request.contextPath}/book/save" method="post">
     <h2>添加图书</h2>
     <label for="name">书名：</label>
     <input type="text" id="name" name="name" required>
@@ -79,3 +79,4 @@
 </form>
 </body>
 </html>
+

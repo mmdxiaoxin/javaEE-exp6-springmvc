@@ -54,6 +54,8 @@
 <body>
 <form action="/book/save" method="post">
     <h2>编辑图书</h2>
+    <input type="hidden" name="id" value="${book.id}">
+
     <label for="name">书名：</label>
     <input type="text" id="name" name="name" required value="${book.name}">
 
@@ -64,7 +66,7 @@
     <input type="text" id="publish" name="publish" required value="${book.publish}">
 
     <label for="publishDate">出版日期：</label>
-    <input type="date" id="publishDate" name="publishDate" required value="${book.publishDate}">
+    <input type="date" id="publishdate" name="publishdate" required value="${book.formattedPublishDate}">
 
     <label for="page">页数：</label>
     <input type="number" id="page" name="page" required value="${book.page}">

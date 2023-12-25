@@ -6,7 +6,7 @@
   显示图书列表的页面
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -65,19 +65,18 @@
         <th>内容摘要</th>
         <th>操作</th>
     </tr>
-    <jsp:useBean id="result" scope="request" type="java.util.List"/>
     <c:forEach items="${result}" var="book" varStatus="stat">
         <tr ${stat.index%2==0 ? 'class="even"' : ''}>
             <td>${book.name}</td>
             <td>${book.author}</td>
             <td>${book.publish}</td>
-            <td>${book.publishdate}</td>
+            <td>${book.formattedPublishDate}</td>
             <td>${book.page}</td>
             <td>${book.price}</td>
             <td>${book.content}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/book/change">修改</a>
-                <a href="${pageContext.request.contextPath}/book/delete">删除</a>
+                <a href="${pageContext.request.contextPath}/book/edit?id=${book.id}">修改</a>
+                <a href="${pageContext.request.contextPath}/book/delete?id=${book.id}">删除</a>
             </td>
         </tr>
     </c:forEach>

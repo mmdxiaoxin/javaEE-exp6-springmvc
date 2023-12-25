@@ -57,7 +57,7 @@
     </style>
 </head>
 <body>
-<form action="/login" method="post">
+<form action="/user/login" method="post">
     <h2>用户登录</h2>
     <label for="username">登录名:</label>
     <input type="text" id="username" name="username" required>

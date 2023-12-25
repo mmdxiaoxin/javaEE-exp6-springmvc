@@ -48,4 +48,15 @@
         <property name="prefix" value="/WEB-INF/views/" />
     </bean>
 
+    <!-- 配置拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!-- 配置拦截器类 -->
+            <mvc:mapping path="/**"/> <!-- 配置拦截的请求路径 -->
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/user/login"/>
+            <bean class="com.mmdxiaoxin.controller.AuthenticationInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
